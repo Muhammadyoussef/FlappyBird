@@ -45,7 +45,8 @@ public class FlappyBird extends ApplicationAdapter {
 	private float topTubeYCoordinate;
 	private float bottomTubeYCoordinate;
 	private float[] tubesOffset = new float[numberOfTubes];
-	private final float tubesVelocity = 4;
+	private float maxTubeOffset;
+	private final float tubesVelocity = 8;
 	private final float tubesGap = 500;
 	private float distanceBetweenTubes;
 	private Rectangle[] topTubeRectangles;
@@ -93,7 +94,8 @@ public class FlappyBird extends ApplicationAdapter {
 		screenWidth  = Gdx.graphics.getWidth();
 		screenHeight = Gdx.graphics.getHeight();
 		randomGenerator = new Random();
-		distanceBetweenTubes = screenWidth/2;
+		distanceBetweenTubes = screenWidth/2 + 100;
+		maxTubeOffset = screenHeight/2 - tubesGap/2 - 100;
 
 		//Initializing coordinates
 		setBirdCoordinates(birdState);
@@ -214,7 +216,7 @@ public class FlappyBird extends ApplicationAdapter {
 			if (tubesXCoordinate[i] < -topTube.getWidth()) {
 
 				tubesXCoordinate[i] += numberOfTubes * distanceBetweenTubes;
-				tubesOffset[i] = (randomGenerator.nextFloat() - 0.5f) * (screenHeight - tubesGap - 200);
+				tubesOffset[i] = (randomGenerator.nextFloat() - 0.5f) * (screenHeight - tubesGap - maxTubeOffset);
 
 			} else {
 
