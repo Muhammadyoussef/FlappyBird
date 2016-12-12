@@ -128,7 +128,6 @@ public class FlappyBird extends ApplicationAdapter {
 
 			drawStartButton();
 			drawBird();
-			FlyingAnimation();
 
 			// to kick start the game
 			if (Gdx.input.justTouched()){
