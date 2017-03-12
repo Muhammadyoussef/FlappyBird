@@ -46,7 +46,7 @@ public class FlappyBird extends ApplicationAdapter {
 	private float bottomTubeYCoordinate;
 	private float[] tubesOffset = new float[numberOfTubes];
 	private float maxTubeOffset;
-	private final float tubesVelocity = 8;
+	private final float tubesVelocity = 6;
 	private final float tubesGap = 500;
 	private float distanceBetweenTubes;
 	private Rectangle[] topTubeRectangles;
@@ -66,8 +66,14 @@ public class FlappyBird extends ApplicationAdapter {
 	private final int gameOver = 2;
 	
 	//Other Variables
-	private int screenWidth;
-	private int screenHeight;
+	private static int screenWidth;   public static int getScreenHeight() {
+
+		return screenHeight;
+	}
+	private static int screenHeight;  public static int getScreenWidth() {
+
+		return screenWidth;
+	}
 	private final int gravity = 2;
 	private Random randomGenerator;
 	private static int score;
@@ -117,7 +123,7 @@ public class FlappyBird extends ApplicationAdapter {
 
 	}
 
-	//responsible for rendering every thing on the screen (Will be called continuously)
+	//responsible for rendering every th52ing on the screen (Will be called continuously)
 	@Override
 	public void render () {
 
